@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Cotejador de Datos entre Plataformas
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Esta herramienta permite identificar coincidencias entre datos de diferentes plataformas (Brkaway y Xtract), comparando montos financieros y usuarios para facilitar la reconciliación de datos.
 
-## Available Scripts
+![Vista previa de la aplicación](ruta-a-una-captura-de-pantalla.png)
 
-In the project directory, you can run:
+## Problema
 
-### `npm start`
+Frecuentemente necesitamos cotejar información financiera entre dos plataformas diferentes, identificando qué registros en una plataforma corresponden a registros en la otra. Es crucial encontrar estas coincidencias para asegurar la integridad de los datos y facilitar la reconciliación financiera.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Características
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Búsqueda bidireccional**: Permite buscar coincidencias comenzando por montos o por usuarios
+- **Coincidencia flexible**: Incluye tolerancias para montos y coincidencias parciales para usuarios
+- **Visualización clara**: Muestra los resultados en un formato fácil de entender
+- **Exportación**: Permite exportar los resultados a CSV para análisis posterior
 
-### `npm test`
+## Enfoque Metodológico
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Análisis inicial**: Exploración manual de datos para identificar patrones
+2. **Detección de patrones**: Descubrimiento de que los identificadores de usuario suelen compartir sufijos numéricos
+3. **Desarrollo de criterios flexibles**: Implementación de tolerancias para montos y coincidencia parcial para usuarios
+4. **Solución programática**: Desarrollo de una interfaz que permite configurar y visualizar las coincidencias
 
-### `npm run build`
+## Tecnologías utilizadas
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- React
+- PapaParse (para procesamiento de CSV)
+- Tailwind CSS
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Cómo usar
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Coloca tus archivos CSV en la carpeta `public/` con los nombres `Fake_Brkaway_Data.csv` y `Fake_Xtract_Data.csv`
+2. Ejecuta la aplicación con `npm start`
+3. Configura los parámetros de búsqueda:
+   - Selecciona la estrategia (montos primero o usuarios primero)
+   - Elige los campos a comparar en cada tabla
+   - Configura la tolerancia de montos y las opciones de coincidencia de usuarios
+4. Revisa los resultados y exporta si es necesario
 
-### `npm run eject`
+## Instalación
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+# Clonar el repositorio
+git clone https://github.com/TU_USUARIO/cotejo-datos-plataformas.git
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Navegar al directorio del proyecto
+cd cotejo-datos-plataformas
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Instalar dependencias
+npm install
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Ejecutar la aplicación
+npm start
+```
