@@ -2,7 +2,7 @@
 
 Esta herramienta permite identificar coincidencias entre datos de diferentes plataformas (Brkaway y Xtract), comparando montos financieros y usuarios para facilitar la reconciliación de datos.
 
-![Vista previa de la aplicación](ruta-a-una-captura-de-pantalla.png)
+![Vista previa de la aplicación](/screenshots/captura-principal.png)
 
 ## Problema
 
